@@ -1,0 +1,51 @@
+using System;
+
+class BankAccount{
+    private string accountNumber;
+    private string accountHolder;
+    private double balance;
+
+    // Constructor
+    public BankAccount(string accNum, string holder, double bal)
+    {
+        accountNumber = accNum;
+        accountHolder = holder;
+        balance = bal;
+    }
+
+    public void Deposit(double amount)
+    {
+        balance += amount;
+        Console.WriteLine("Deposit Successful!");
+    }
+
+    public void Withdraw(double amount)
+    {
+        if (amount <= balance)
+        {
+            balance -= amount;
+            Console.WriteLine("Withdrawal Successful!");
+        }
+        else
+        {
+            Console.WriteLine("Insufficient Balance!");
+        }
+    }
+
+    public void DisplayBalance()
+    {
+        Console.WriteLine("Current Balance: " + balance.ToString("F2"));
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        BankAccount acc = new BankAccount("12345", "Nenia kimberly Belmonte", 5000);
+
+        acc.Deposit(1000);
+        acc.Withdraw(1500);
+        acc.DisplayBalance();
+    }
+}
