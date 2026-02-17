@@ -1,0 +1,38 @@
+using System;
+
+class Student
+{
+    public string studentID;
+    public string name;
+    public string course;
+
+    // Constructor
+    public Student(string id, string n, string c)
+    {
+        studentID = id;
+        name = n;
+        course = c;
+    }
+
+    // Method
+    public void DisplayInfo()
+    {
+        Console.WriteLine("Student ID: " + studentID);
+        Console.WriteLine("Name: " + name);
+        Console.WriteLine("Course: " + course);
+        Console.WriteLine();
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Student s1 = new Student("2022305625", "Nenia kimberly Q Belmonte", "BS-IT");
+        Student s2 = new Student("2025100658", "Laila Aurit", "Dairy Farm");
+
+        s1.DisplayInfo();
+        s2.DisplayInfo();
+    }
+}
+
